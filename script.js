@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
     initializeTypingAnimation();
     initializeNavigation();
-    initializeScrollAnimations();
-    initializeSkillBars();
+    // initializeScrollAnimations(); // Disabled to prevent sliding animations
+    initializeSkillBars(); // Re-enabled for skill bar progress animations
     initializeContactForm();
     initializeLoader();
     
@@ -20,6 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // Typing Animation
 function initializeTypingAnimation() {
     const typingElement = document.getElementById('typing-text');
+    
+    // Skip typing animation if element doesn't exist
+    if (!typingElement) {
+        console.log('Typing element not found, skipping animation');
+        return;
+    }
+    
     const texts = [
         "I'm Impana P Nittur",
         "Aspiring Data Analyst",
@@ -65,10 +72,18 @@ function initializeNavigation() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
     
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Hamburger clicked!'); // Debug log
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            console.log('Menu active:', navMenu.classList.contains('active')); // Debug log
+        });
+    } else {
+        console.error('Elements not found:', { hamburger, navMenu });
+    }
     
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -343,10 +358,14 @@ function initializeLoader() {
 document.addEventListener('DOMContentLoaded', function() {
     const downloadBtn = document.getElementById('download-resume');
     
-    downloadBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        showNotification('Resume download will be available soon!', 'info');
-    });
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showNotification('Resume download will be available soon!', 'info');
+        });
+    } else {
+        console.log('Download resume button not found, skipping');
+    }
 });
 
 // Enhanced parallax effect
@@ -468,7 +487,18 @@ function addThemeToggle() {
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         transition: all 0.3s ease;
         z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     `;
+    
+    themeToggle.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1)';
+    });
+    
+    themeToggle.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+    });
     
     themeToggle.addEventListener('click', function() {
         document.body.classList.toggle('dark-theme');
