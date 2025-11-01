@@ -679,6 +679,190 @@ function addParticleStyles() {
     document.head.appendChild(style);
 }
 
+// Certificate Modal Functions
+function openCertificate(imagePath) {
+    const modal = document.getElementById('certificateModal');
+    const modalImg = document.getElementById('certImage');
+    modal.style.display = 'block';
+    modalImg.src = imagePath;
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeCertificate() {
+    const modal = document.getElementById('certificateModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeCertificate();
+    }
+});
+
+// Project Modal Functions
+const projectDetails = {
+    voice: {
+        title: "💬 Voice Gender Prediction",
+        sections: [
+            {
+                heading: "Overview",
+                content: "This project focuses on building a <strong>machine learning model</strong> capable of predicting the <strong>gender of a speaker</strong> based on their voice recordings. The model analyzes frequency-based features of sound waves to distinguish between male and female voices. The system leverages advanced <strong>audio signal processing</strong> techniques to extract crucial acoustic parameters from voice samples recorded through a microphone."
+            },
+            {
+                heading: "Technical Implementation",
+                content: "The pipeline begins by recording or importing raw audio files, followed by noise removal and normalization. Using the <strong>Librosa</strong> and <strong>Sounddevice</strong> libraries, features like <strong>MFCC (Mel-Frequency Cepstral Coefficients)</strong>, <strong>Chroma Frequencies</strong>, and <strong>Spectral Centroids</strong> are extracted to represent the vocal characteristics. These features are then fed into machine learning classifiers built with <strong>Scikit-learn</strong>, such as <strong>Support Vector Machines (SVM)</strong> and <strong>Logistic Regression</strong>, to learn patterns distinguishing male and female frequencies."
+            },
+            {
+                heading: "Evaluation & Results",
+                content: "After hyperparameter tuning and cross-validation, the model achieved reliable performance with over <strong>90% classification accuracy</strong> on test data. A simple <strong>graphical user interface (GUI)</strong> was also developed to allow users to record their voice and get instant gender predictions."
+            },
+            {
+                heading: "Outcome",
+                content: "The project demonstrates how frequency-domain features can be effectively used for speaker characterization, forming the foundation for <strong>voice recognition</strong>, <strong>speech-based authentication</strong>, and <strong>AI-driven voice assistants</strong>."
+            }
+        ],
+        techStack: ["NumPy", "Sounddevice", "Scikit-learn", "Librosa", "Machine Learning", "Audio Processing"]
+    },
+    fakenews: {
+        title: "📰 Fake News Detection",
+        sections: [
+            {
+                heading: "Overview",
+                content: "This project aims to tackle misinformation by developing an intelligent <strong>fake news detection system</strong> using <strong>Natural Language Processing (NLP)</strong> and <strong>machine learning</strong>. The model classifies news articles as <strong>\"Real\" or \"Fake\"</strong> based on linguistic cues, writing style, and semantic structure."
+            },
+            {
+                heading: "Technical Implementation",
+                content: "A large dataset of labeled news articles was collected and preprocessed using <strong>NLTK</strong> and <strong>spaCy</strong> for text cleaning, tokenization, stop-word removal, and lemmatization. Feature extraction was performed using <strong>TF-IDF Vectorization</strong> and <strong>Bag-of-Words (BoW)</strong> techniques to convert text into numerical representations. Models such as <strong>Logistic Regression</strong>, <strong>Naïve Bayes</strong>, and <strong>Passive Aggressive Classifier</strong> were trained and compared based on precision, recall, and F1-score."
+            },
+            {
+                heading: "Evaluation & Results",
+                content: "After experimentation, the <strong>Passive Aggressive Classifier</strong> achieved the best results, maintaining high precision and recall for both classes. The final model was deployed as an <strong>interactive web interface</strong> that allows users to paste any news headline or paragraph to check its authenticity in real time."
+            },
+            {
+                heading: "Outcome",
+                content: "This project highlights the application of <strong>NLP in combating misinformation</strong> and showcases how supervised learning models can play a key role in identifying and filtering unreliable digital content across news platforms and social media."
+            }
+        ],
+        techStack: ["Python", "Scikit-learn", "NLP", "NLTK", "spaCy", "TF-IDF", "Machine Learning"]
+    },
+    voting: {
+        title: "🗳️ Online Voting System",
+        sections: [
+            {
+                heading: "Overview",
+                content: "The <strong>Online Voting System</strong> is a secure and user-friendly web application that enables <strong>digital elections</strong> where registered voters can securely log in and cast their votes. The system was built with a focus on maintaining <strong>integrity, transparency, and data privacy</strong>, simulating the real-world voting process in an online environment."
+            },
+            {
+                heading: "Technical Implementation",
+                content: "The platform was developed using <strong>HTML, CSS, PHP, and SQL</strong>. It allows candidate registration with attributes such as name, party name, and party logo. Voters are provided with unique credentials to prevent multiple logins or fraudulent voting attempts. The backend database ensures data consistency and securely records each vote cast."
+            },
+            {
+                heading: "System Features",
+                list: [
+                    "Secure voter login and authentication using SQL-based verification",
+                    "Candidate and voter registration modules with validation checks",
+                    "Admin dashboard for viewing live results and managing elections",
+                    "Automatic vote counting and result display after the election ends"
+                ]
+            },
+            {
+                heading: "Outcome",
+                content: "The final system successfully replicates the end-to-end workflow of an electoral process digitally, promoting <strong>paperless and transparent voting</strong>. It can serve as a scalable foundation for college elections, organizational polls, or community-based voting systems."
+            }
+        ],
+        techStack: ["HTML", "CSS", "SQL", "PHP", "Web Development", "Database Management"]
+    },
+    cerebralchat: {
+        title: "🧠 CerebralChat: Hybrid 3D-CNN and BiLSTM for Imagined Speech Recognition",
+        sections: [
+            {
+                heading: "Overview",
+                content: "<strong>CerebralChat</strong> is an innovative <strong>Brain–Computer Interface (BCI)</strong> project that explores the potential of decoding <strong>imagined speech</strong> (words a person thinks but does not vocalize) from <strong>EEG brain signals</strong>. The project integrates deep learning techniques to enable a form of silent communication for individuals with speech impairments."
+            },
+            {
+                heading: "Technical Implementation",
+                content: "The system preprocesses raw EEG signals through filtering, normalization, and artifact removal. These signals are transformed into <strong>spatio-temporal brain maps</strong>, capturing how brain activity evolves across both time and regions. The model architecture combines <strong>3D Convolutional Neural Networks (3D-CNN)</strong> for extracting spatial patterns and <strong>Bidirectional Long Short-Term Memory (BiLSTM)</strong> networks for learning temporal dependencies."
+            },
+            {
+                heading: "Training & Evaluation",
+                content: "The hybrid model was trained on EEG datasets related to imagined words and achieved an <strong>accuracy of 84.67%</strong>, outperforming baseline models. The architecture was fine-tuned using <strong>Adam optimizer</strong> and evaluated using confusion matrices and loss curves."
+            },
+            {
+                heading: "Outcome & Future Scope",
+                content: "This project demonstrates the feasibility of decoding imagined speech with neural networks, contributing to <strong>assistive communication technologies</strong>. Future iterations involve connecting the trained model to a <strong>dummy brain device</strong> integrated with <strong>LED indicators</strong>, where specific lights represent recognized words—providing a visual demonstration of thought-to-speech translation."
+            }
+        ],
+        techStack: ["Deep Learning", "3D-CNN", "BiLSTM", "Signal Processing", "EEG Analysis", "Feature Engineering", "TensorFlow/PyTorch"]
+    }
+};
+
+function openProjectModal(projectId) {
+    const modal = document.getElementById('projectModal');
+    const modalBody = document.getElementById('modalBody');
+    const project = projectDetails[projectId];
+    
+    if (!project) return;
+    
+    let content = `<h2 class="modal-project-title">${project.title}</h2>`;
+    
+    project.sections.forEach(section => {
+        content += `<div class="modal-section">`;
+        content += `<h3>${section.heading}</h3>`;
+        
+        if (section.content) {
+            content += `<p>${section.content}</p>`;
+        }
+        
+        if (section.list) {
+            content += `<ul>`;
+            section.list.forEach(item => {
+                content += `<li>${item}</li>`;
+            });
+            content += `</ul>`;
+        }
+        
+        content += `</div>`;
+    });
+    
+    if (project.techStack) {
+        content += `<div class="modal-section">`;
+        content += `<h3>Tech Stack</h3>`;
+        content += `<div class="modal-tech-stack">`;
+        project.techStack.forEach(tech => {
+            content += `<span class="modal-tech-tag">${tech}</span>`;
+        });
+        content += `</div>`;
+        content += `</div>`;
+    }
+    
+    modalBody.innerHTML = content;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('projectModal');
+    if (event.target === modal) {
+        closeProjectModal();
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeProjectModal();
+    }
+});
+
 // Initialize particles
 document.addEventListener('DOMContentLoaded', function() {
     addParticleStyles();

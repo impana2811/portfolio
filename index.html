@@ -18,11 +18,7 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
                 <a href="#projects" class="nav-link">Projects</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#certifications" class="nav-link">Certifications</a>
-                <a href="#achievements" class="nav-link">Achievements</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="hamburger" id="hamburger">
@@ -81,11 +77,8 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <div class="about-card">
-                        <div class="card-content">
-                            <h3>Career Objective</h3>
-                            <p>To leverage my analytical skills and technical expertise in data science to contribute to innovative projects that solve real-world problems and drive business growth.</p>
-                        </div>
+                    <div class="profile-photo">
+                        <img src="images/impanapic.jpg" alt="Impana P Nittur">
                     </div>
                 </div>
             </div>
@@ -193,72 +186,77 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-header">
-                        <i class="fas fa-microphone project-icon"></i>
-                        <h3>Voice Gender Prediction</h3>
-                    </div>
-                    <p class="project-description">
-                        Developed a machine learning model to predict gender from voice recordings using frequency-based audio features and acoustic analysis.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">NumPy</span>
-                        <span class="tech-tag">Sounddevice</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <i class="fas fa-newspaper project-icon"></i>
-                        <h3>Fake News Detection</h3>
-                    </div>
-                    <p class="project-description">
-                        Built an NLP-based classification system to identify fake news articles using natural language processing techniques and machine learning algorithms.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">NLTK</span>
+                    <div class="project-content">
+                        <h3 class="project-title">Voice Gender Prediction</h3>
+                        <p class="project-description">
+                            A machine learning model that predicts gender from voice recordings using frequency-based audio features.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Sounddevice</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                        </div>
+                        <a href="#" class="project-btn" onclick="openProjectModal('voice'); return false;">Learn More</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-header">
-                        <i class="fas fa-vote-yea project-icon"></i>
-                        <h3>Online Voting System</h3>
-                    </div>
-                    <p class="project-description">
-                        Developed a secure web-based voting platform with candidate management, voter authentication, and real-time election results.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">SQL</span>
+                    <div class="project-content">
+                        <h3 class="project-title">Fake News Detection</h3>
+                        <p class="project-description">
+                            Python-based model that classifies news content as Fake or Real using natural language processing techniques.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">NLP</span>
+                        </div>
+                        <a href="#" class="project-btn" onclick="openProjectModal('fakenews'); return false;">Learn More</a>
                     </div>
                 </div>
 
-                <div class="project-card featured">
-                    <div class="project-header">
-                        <i class="fas fa-brain project-icon"></i>
-                        <h3>CerebralChat - EEG Speech Recognition</h3>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Online Voting System</h3>
+                        <p class="project-description">
+                            A secure web platform where candidates can register and voters can log in to cast votes. Displays candidate name, party logo, and party name.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                        <a href="#" class="project-btn" onclick="openProjectModal('voting'); return false;">Learn More</a>
                     </div>
-                    <p class="project-description">
-                        Advanced deep learning project using hybrid 3D-CNN + BiLSTM architecture for imagined speech recognition from EEG signals, achieving 84.67% accuracy.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Deep Learning</span>
-                        <span class="tech-tag">Signal Processing</span>
-                        <span class="tech-tag">CNN</span>
-                        <span class="tech-tag">LSTM</span>
-                        <span class="tech-tag">Feature Engineering</span>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">CerebralChat: Hybrid 3D-CNN and BiLSTM for Imagined Speech Recognition</h3>
+                        <p class="project-description">
+                            Developed a hybrid deep learning framework integrating 3D-CNN and BiLSTM for imagined speech recognition from EEG signals. Transformed EEG recordings into spatio-temporal brain maps to effectively capture spatial and temporal features, achieving an accuracy of 84.67%. This work demonstrates the potential of robust BCI-based solutions for assistive communication technologies.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">Signal Processing</span>
+                            <span class="tech-tag">Feature Engineering</span>
+                        </div>
+                        <a href="#" class="project-btn" onclick="openProjectModal('cerebralchat'); return false;">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="project-modal">
+        <div class="project-modal-content">
+            <span class="project-modal-close" onclick="closeProjectModal()">&times;</span>
+            <div id="modalBody" class="project-modal-body">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
 
     <!-- Education Section -->
     <section id="education" class="education">
@@ -309,8 +307,9 @@
                         <i class="fas fa-database"></i>
                     </div>
                     <h3>Data Science for Engineers</h3>
-                    <p class="cert-provider">NPTEL</p>
-                    <div class="cert-badge">Certified</div>
+                    <p class="cert-provider">NPTEL - IIT Madras</p>
+                    <p class="cert-details">60% | Jan-Mar 2025</p>
+                    <div class="cert-badge" onclick="openCertificate('certificates/Datascience.jpg')">View Certificate</div>
                 </div>
                 <div class="certification-card">
                     <div class="cert-icon">
@@ -318,35 +317,46 @@
                     </div>
                     <h3>Python Fundamentals</h3>
                     <p class="cert-provider">Infosys Springboard</p>
-                    <div class="cert-badge">Certified</div>
+                    <p class="cert-details">September 2023</p>
+                    <div class="cert-badge" onclick="openCertificate('certificates/python.jpg')">View Certificate</div>
                 </div>
                 <div class="certification-card">
                     <div class="cert-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>Data Structures & Algorithms</h3>
+                    <h3>Data Structures and Algorithms</h3>
                     <p class="cert-provider">Infosys Springboard</p>
-                    <div class="cert-badge">Certified</div>
+                    <p class="cert-details">January 2024</p>
+                    <div class="cert-badge" onclick="openCertificate('certificates/dsa.jpg')">View Certificate</div>
                 </div>
                 <div class="certification-card">
                     <div class="cert-icon">
                         <i class="fas fa-server"></i>
                     </div>
                     <h3>Operating Systems Basics</h3>
-                    <p class="cert-provider">Cisco</p>
-                    <div class="cert-badge">Certified</div>
+                    <p class="cert-provider">Cisco Networking Academy</p>
+                    <p class="cert-details">January 2024</p>
+                    <div class="cert-badge" onclick="openCertificate('certificates/cisco(os).jpg')">View Certificate</div>
                 </div>
                 <div class="certification-card">
                     <div class="cert-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Tata Data Visualization</h3>
-                    <p class="cert-provider">Forage Simulation</p>
-                    <div class="cert-badge">Completed</div>
+                    <h3>Data Visualisation: Empowering Business with Effective Insights</h3>
+                    <p class="cert-provider">Tata - Forage</p>
+                    <p class="cert-details">August 2025</p>
+                    <div class="cert-badge" onclick="openCertificate('certificates/TATA.jpg')">View Certificate</div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="cert-modal" onclick="closeCertificate()">
+        <span class="cert-close">&times;</span>
+        <img class="cert-modal-content" id="certImage">
+        <div id="certCaption"></div>
+    </div>
 
     <!-- Achievements Section -->
     <section id="achievements" class="achievements">
