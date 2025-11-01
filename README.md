@@ -114,7 +114,6 @@ background: linear-gradient(135deg, #your-color-1 0%, #your-color-2 100%);
 **Impana P Nittur**
 - 📍 Location: Bengaluru, India
 - 📧 Email: impanapnittur.aiandds2026@gmail.com
-- 📱 Phone: +91 6363213950
 - 🔗 GitHub: [github.com/impana2811](https://github.com/impana2811)
 - 💼 LinkedIn: [linkedin.com/in/impana-p-nittur-40b166264](https://www.linkedin.com/in/impana-p-nittur-40b166264)
 
