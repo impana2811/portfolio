@@ -824,6 +824,9 @@ h1, h2, h3 {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
 }
 
 .certification-card::before {
@@ -895,6 +898,9 @@ h1, h2, h3 {
     text-align: center;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
 }
 
 .achievement-card:hover {
@@ -1535,9 +1541,11 @@ h1, h2, h3 {
     }
 
     .certification-card, .achievement-card {
-        padding: 2rem !important;
+        padding: 1.8rem !important;
         text-align: center !important;
-        min-height: 300px !important;
+        height: 320px !important;
+        min-height: 320px !important;
+        max-height: 320px !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;
@@ -1649,11 +1657,28 @@ h1, h2, h3 {
 /* All Mobile Devices - Catch All */
 @media screen and (max-width: 768px) {
     .certification-card, .achievement-card {
-        min-height: 280px !important;
-        height: auto !important;
+        height: 320px !important;
+        min-height: 320px !important;
+        max-height: 320px !important;
         display: flex !important;
         flex-direction: column !important;
         padding: 1.5rem !important;
+        box-sizing: border-box !important;
+        justify-content: space-between !important;
+    }
+    
+    .certification-card h3, .achievement-card h3 {
+        margin: 1rem 0 0.5rem 0 !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .cert-provider, .certification-card p, .achievement-card p {
+        flex-grow: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        margin: 0.5rem 0 !important;
     }
     
     .about-card {
