@@ -1336,6 +1336,10 @@ h1, h2, h3 {
 
 /* Mobile Portrait */
 @media (max-width: 480px) {
+    /* Force mobile layout overrides */
+    * {
+        box-sizing: border-box;
+    }
     .container {
         padding: 0 15px;
         max-width: 100%;
@@ -1412,10 +1416,6 @@ h1, h2, h3 {
     }
 
     .about {
-        padding: 3rem 0;
-    }
-
-    .about {
         padding: 2rem 0;
     }
 
@@ -1433,20 +1433,27 @@ h1, h2, h3 {
     }
     
     .about-card {
-        margin-top: 1.5rem;
-        padding: 1.5rem;
-        border-radius: 15px;
+        margin-top: 1.5rem !important;
+        padding: 1.5rem !important;
+        border-radius: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
     }
     
     .about-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.8rem;
+        font-size: 1.2rem !important;
+        margin-bottom: 0.8rem !important;
+        word-wrap: break-word !important;
     }
     
     .about-card p {
-        font-size: 0.85rem;
-        line-height: 1.5;
-        opacity: 0.9;
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+        opacity: 0.9 !important;
+        word-wrap: break-word !important;
+        white-space: normal !important;
     }
 
     .about-stats {
@@ -1528,12 +1535,14 @@ h1, h2, h3 {
     }
 
     .certification-card, .achievement-card {
-        padding: 2rem;
-        text-align: center;
-        min-height: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        padding: 2rem !important;
+        text-align: center !important;
+        min-height: 300px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     
     .certification-card h3, .achievement-card h3 {
@@ -1634,6 +1643,29 @@ h1, h2, h3 {
         width: 40px;
         height: 40px;
         font-size: 1rem;
+    }
+}
+
+/* All Mobile Devices - Catch All */
+@media screen and (max-width: 768px) {
+    .certification-card, .achievement-card {
+        min-height: 280px !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+    }
+    
+    .about-card {
+        padding: 1.2rem !important;
+        margin: 1rem auto !important;
+        max-width: 100% !important;
+    }
+    
+    .about-card p {
+        font-size: 0.9rem !important;
+        white-space: normal !important;
+        word-break: break-word !important;
     }
 }
 
